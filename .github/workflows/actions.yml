@@ -1,5 +1,6 @@
 name: This is a github action
-on: [push] #for event triggering we use 'on' keyword
+run-name: this is the run name
+on: [push]              #for event triggering we use 'on' keyword
 jobs: 
   Echo:                 #nested job
     runs-on: ubuntu-latest
