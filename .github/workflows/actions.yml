@@ -5,7 +5,7 @@ jobs:
   Echo:                 #nested job
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo
-        uses: actions/checkout@v4
+      - name: checkout repo 
+        uses: actions/checkout@v4 #actions username ka checkout repo mai instruction execute.
       - name: cat temp.txt
         run: cat temp.txt
