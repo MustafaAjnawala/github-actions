@@ -1,30 +1,13 @@
 name: This is a github action
 run-name: this is the run name
 on: [push]              #for event triggering we use 'on' keyword
-jobs: 
-  Echo:                 #nested job
+jobs:
+  node:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo 
-        uses: actions/checkout@v4 #actions username ka checkout repo mai instruction execute.
-      - name: cat temp.txt
-        run: cat temp.txt
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: test
-        run: sleep 5s && echo test
-  build:
-    runs-on: ubuntu-latest
-    needs: [test]
-    steps:
-      - name: build
-        run: sleep 3s && echo build
-        
-  deploy:
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-      - name: deploy
-        run: echo deploy
-    
+      - name: setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21.5.0'
+      - run: node --version
+          
