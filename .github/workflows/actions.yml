@@ -1,0 +1,8 @@
+name: This is a github action
+on: [push] #for event triggering we use 'on' keyword
+jobs: 
+  Echo:                 #nested job
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo hello
+        run: echo hello
