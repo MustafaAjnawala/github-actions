@@ -5,5 +5,5 @@ jobs:
   Echo:                 #nested job
     runs-on: ubuntu-latest
     steps:
-      - name: echo hello
-        run: echo hello
+      - name: cat temp.txt
+        run: cat temp.txt
